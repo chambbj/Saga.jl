@@ -50,7 +50,7 @@ function slopeAspectCurvature(elevation; slope=false, aspect=false,
         @eval begin
             if $sym
 	        @printf " %s" $(string(sym))
-		$(string(sym,"_name")) = tempname()".sgrd"
+		#$(string(sym,"_name")) = tempname()".sgrd"
 	    end
 	end
     end
@@ -69,18 +69,18 @@ function slopeAspectCurvature(elevation; slope=false, aspect=false,
 #	c_tota ? " c_tota" : "",
 #	c_roto ? " c_roto" : "",
 #	" )")
-#    slope_name = slope ? tempname()".sgrd" : ""
-#    aspect_name = aspect ? tempname()".sgrd" : ""
-#    c_gene_name = c_gene ? tempname()".sgrd" : ""
-#    c_prof_name = c_prof ? tempname()".sgrd" : ""
-#    c_plan_name = c_plan ? tempname()".sgrd" : ""
-#    c_tang_name = c_tang ? tempname()".sgrd" : ""
-#    c_long_name = c_long ? tempname()".sgrd" : ""
-#    c_cros_name = c_cros ? tempname()".sgrd" : ""
-#    c_mini_name = c_mini ? tempname()".sgrd" : ""
-#    c_maxi_name = c_maxi ? tempname()".sgrd" : ""
-#    c_tota_name = c_tota ? tempname()".sgrd" : ""
-#    c_roto_name = c_roto ? tempname()".sgrd" : ""
+    slope_name = slope ? tempname()".sgrd" : ""
+    aspect_name = aspect ? tempname()".sgrd" : ""
+    c_gene_name = c_gene ? tempname()".sgrd" : ""
+    c_prof_name = c_prof ? tempname()".sgrd" : ""
+    c_plan_name = c_plan ? tempname()".sgrd" : ""
+    c_tang_name = c_tang ? tempname()".sgrd" : ""
+    c_long_name = c_long ? tempname()".sgrd" : ""
+    c_cros_name = c_cros ? tempname()".sgrd" : ""
+    c_mini_name = c_mini ? tempname()".sgrd" : ""
+    c_maxi_name = c_maxi ? tempname()".sgrd" : ""
+    c_tota_name = c_tota ? tempname()".sgrd" : ""
+    c_roto_name = c_roto ? tempname()".sgrd" : ""
     tic()
     run(`saga_cmd -f=s ta_morphometry 0 -ELEVATION $grids -SLOPE $slope_name
         -ASPECT $aspect_name -C_GENE $c_gene_name -C_PROF $c_prof_name
