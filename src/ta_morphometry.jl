@@ -50,7 +50,7 @@ function slopeAspectCurvature(elevation; slope=false, aspect=false,
         @eval begin
             if $sym
 	        @printf " %s" $(string(sym))
-		$(string(sym))_name = tempname()".sgrd"
+		$(string(sym,"_name")) = tempname()".sgrd"
 	    end
 	end
     end
@@ -99,7 +99,7 @@ function slopeAspectCurvature(elevation; slope=false, aspect=false,
 	for sym in (:slope, :aspect, :c_gene, :c_prof, :c_plan, :c_tang, :c_long, :c_cros, :c_mini, :c_maxi, :c_tota, :c_roto)
 	    @eval begin
 		if $sym
-		    @spawn sgrd2tiff($(string(sym))_name, "$prefix-$(string(sym)).tif")
+		    @spawn sgrd2tiff($(string(sym,"_name")), "$prefix-$(string(sym)).tif")
 		end
 	    end
 	end
